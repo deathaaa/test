@@ -1,5 +1,5 @@
-﻿#include <stdio.h>
-//@all 返回1说明成功
+#include <stdio.h>
+//@all ����1˵���ɹ�
 typedef struct {
 	int date[10];
 	int length;
