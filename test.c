@@ -48,7 +48,14 @@ int deleteElement(testList *L, int position, int *e) {
 	L->length = L->length - 1;
 
 }
+int modifyElement(testList *L,int position , int i) {
+	if (L->length == 0 || position <1 || position > L->length) {
+		return 0;
+	}
 
+	L->data[position - 1] = i;
+	return 1;
+}
 int main() {
 	int *point;
 	int value = 1;
