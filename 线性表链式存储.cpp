@@ -73,7 +73,22 @@ int addElement(LinkList *L, int position,int number) {
 	return 1;
 	
 }
+int deleteElement(LinkList *L, int position, int *e) {
+	LinkList P = *L;
+	int i = 1;
 
+	while (i < position-1&&P != NULL) {
+		P = P->next;
+		i++;
+	}
+	if (P == NULL) {
+		return 0;
+	}
+	*e = P->data;
+	P = P->next;
+	return 1;
+
+}
 int main() {
 	//初始化一个链表，此为头指针
 	LinkList L;
