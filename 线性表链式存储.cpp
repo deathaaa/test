@@ -56,7 +56,7 @@ int findNumber(LinkList L, int number) {
 int addElement(LinkList *L, int position,int number) {
 	LinkList P = *L;
 	int i = 1;
-	while (i < position&&P!=NULL) {
+	while (i < position && P!=NULL) {
 		P = P->next;
 		i++;
 	}
@@ -77,15 +77,18 @@ int deleteElement(LinkList *L, int position, int *e) {
 	LinkList P = *L;
 	int i = 1;
 
-	while (i < position-1&&P != NULL) {
+	while (i < position && P != NULL) {
 		P = P->next;
 		i++;
 	}
 	if (P == NULL) {
 		return 0;
 	}
+
 	*e = P->data;
+	LinkList Q = P;
 	P = P->next;
+	free(Q);
 	return 1;
 
 }
